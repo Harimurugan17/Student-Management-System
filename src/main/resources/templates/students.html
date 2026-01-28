@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Student List</h2>
+
+    <div class="action-bar">
+        <a href="/add" class="btn">Add Student</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>File</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${students}">
+            <td th:text="${s.id}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.email}"></td>
+            <td th:text="${s.course}"></td>
+            <td>
+                <a th:if="${s.file != null}" th:href="@{/download/{id}(id=${s.id})}" target="_blank">Download</a>
+            </td>
+            <td>
+                 <a th:href="@{/edit/{id}(id=${s.id})}" class="edit-btn" style="margin-right: 10px;">Edit</a>
+                 <a th:href="@{/delete/{id}(id=${s.id})}" class="delete-btn">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 20px;">
+        <form th:action="@{/logout}" method="post">
+            <button type="submit" class="btn" style="background-color: #333;">Logout</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

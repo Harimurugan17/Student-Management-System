@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Student</h2>
+
+    <form action="/save" method="post" th:object="${student}" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}" />
+    
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" placeholder="Enter name" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></span>
+        
+        <label>Email:</label>
+        <input type="text" th:field="*{email}" placeholder="Enter email" />
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></span>
+        
+        <label>Course:</label>
+        <input type="text" th:field="*{course}" placeholder="Enter course" />
+        <span th:if="${#fields.hasErrors('course')}" th:errors="*{course}" style="color: red;"></span>
+
+        <label>File:</label>
+        <input type="file" name="studentImage" />
+
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+</body>
+</html>
