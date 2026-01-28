@@ -1,0 +1,56 @@
+﻿> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources UP-TO-DATE
+> Task :testClasses UP-TO-DATE
+
+> Task :test
+
+LoginTest > loginWithWrongPassword_shouldFail() FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:180
+        Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException at AutowiredAnnotationBeanPostProcessor.java:787
+            Caused by: org.springframework.beans.factory.BeanCreationException at AbstractAutowireCapableBeanFactory.java:534
+                Caused by: java.lang.IllegalArgumentException at PropertyPlaceholderHelper.java:180
+
+LoginTest > loginWithEmail_shouldSucceed() FAILED
+    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:145
+.\gradlew.bat : 
+At line:1 char:1
++ .\gradlew.bat test --tests 
+"com.example.hari.LoginTest" 2>&1 | 
+Out-Fi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpe   
+ cified: (:String) [], RemoteExce    
+ption
+    + FullyQualifiedErrorId : Native   
+ CommandError
+ 
+2 tests completed, 2 failed
+
+> Task :test FAILED
+
+[Incubating] Problems report is available at: file:///D:/hari/hari/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the 
+report at: file:///D:/hari/hari/build/r
+eports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 12s
+5 actionable tasks: 1 executed, 4 up-to-date
